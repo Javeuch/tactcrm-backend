@@ -1,0 +1,231 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <changeSet author="max (generated)" id="1695125941513-1">
+        <createTable tableName="Type_depenses">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="Type_depensesPK"/>
+            </column>
+            <column name="cree_par" type="VARCHAR(50)"/>
+            <column name="date_creation" type="datetime"/>
+            <column name="date_modification" type="datetime"/>
+            <column name="modifie_par" type="VARCHAR(50)"/>
+            <column name="description" type="VARCHAR(255)"/>
+            <column name="nom" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="max (generated)" id="1695125941513-2">
+        <createTable tableName="Utilisateurs">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="UtilisateursPK"/>
+            </column>
+            <column name="cree_par" type="VARCHAR(50)"/>
+            <column name="date_creation" type="datetime"/>
+            <column name="date_modification" type="datetime"/>
+            <column name="modifie_par" type="VARCHAR(50)"/>
+            <column name="email" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="is_admin" type="BIT"/>
+            <column name="login" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="nom" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="password_hash" type="VARCHAR(60)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="prenom" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="telephone" type="VARCHAR(255)"/>
+            <column name="adresse_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="max (generated)" id="1695125941513-3">
+        <createTable tableName="adresses">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="adressesPK"/>
+            </column>
+            <column name="cree_par" type="VARCHAR(50)"/>
+            <column name="date_creation" type="datetime"/>
+            <column name="date_modification" type="datetime"/>
+            <column name="modifie_par" type="VARCHAR(50)"/>
+            <column name="localite" type="VARCHAR(255)"/>
+            <column name="pays" type="VARCHAR(255)"/>
+            <column name="rue" type="VARCHAR(255)"/>
+            <column name="ville" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="max (generated)" id="1695125941513-4">
+        <createTable tableName="articles">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="articlesPK"/>
+            </column>
+            <column name="cree_par" type="VARCHAR(50)"/>
+            <column name="date_creation" type="datetime"/>
+            <column name="date_modification" type="datetime"/>
+            <column name="modifie_par" type="VARCHAR(50)"/>
+            <column name="designation" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="prix_vente" type="DOUBLE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="taxe_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="max (generated)" id="1695125941513-5">
+        <createTable tableName="contrats">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="contratsPK"/>
+            </column>
+            <column name="cree_par" type="VARCHAR(50)"/>
+            <column name="date_creation" type="datetime"/>
+            <column name="date_modification" type="datetime"/>
+            <column name="modifie_par" type="VARCHAR(50)"/>
+            <column name="date_debut" type="datetime"/>
+            <column name="date_fin" type="datetime"/>
+            <column name="description" type="LONGTEXT"/>
+            <column name="sujet" type="VARCHAR(255)"/>
+            <column name="type_contrat" type="VARCHAR(255)"/>
+            <column name="client_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="max (generated)" id="1695125941513-6">
+        <createTable tableName="depenses">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="depensesPK"/>
+            </column>
+            <column name="cree_par" type="VARCHAR(50)"/>
+            <column name="date_creation" type="datetime"/>
+            <column name="date_modification" type="datetime"/>
+            <column name="modifie_par" type="VARCHAR(50)"/>
+            <column name="date_depense" type="datetime"/>
+            <column name="description" type="VARCHAR(255)"/>
+            <column name="montant" type="DOUBLE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="nom" type="VARCHAR(255)"/>
+            <column name="devise_id" type="BIGINT"/>
+            <column name="type_depense_id" type="BIGINT"/>
+            <column name="type_paiement_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="max (generated)" id="1695125941513-7">
+        <createTable tableName="details_factures">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="details_facturesPK"/>
+            </column>
+            <column name="prix_facure_ht" type="DOUBLE"/>
+            <column name="quantite" type="INT"/>
+            <column name="article_id" type="BIGINT"/>
+            <column name="facture_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="max (generated)" id="1695125941513-8">
+        <createTable tableName="devises">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="devisesPK"/>
+            </column>
+            <column name="cree_par" type="VARCHAR(50)"/>
+            <column name="date_creation" type="datetime"/>
+            <column name="date_modification" type="datetime"/>
+            <column name="modifie_par" type="VARCHAR(50)"/>
+            <column name="nom" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="symbole" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="max (generated)" id="1695125941513-9">
+        <createTable tableName="factures">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="facturesPK"/>
+            </column>
+            <column name="cree_par" type="VARCHAR(50)"/>
+            <column name="date_creation" type="datetime"/>
+            <column name="date_modification" type="datetime"/>
+            <column name="modifie_par" type="VARCHAR(50)"/>
+            <column name="date_facturation" type="datetime"/>
+            <column name="numero_facture" type="VARCHAR(255)"/>
+            <column name="devise_id" type="BIGINT"/>
+            <column name="taxe_id" type="BIGINT"/>
+            <column name="type_paiement" type="BIGINT"/>
+            <column name="user_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="max (generated)" id="1695125941513-10">
+        <createTable tableName="taxes">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="taxesPK"/>
+            </column>
+            <column name="cree_par" type="VARCHAR(50)"/>
+            <column name="date_creation" type="datetime"/>
+            <column name="date_modification" type="datetime"/>
+            <column name="modifie_par" type="VARCHAR(50)"/>
+            <column name="nom" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="taux" type="INT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="max (generated)" id="1695125941513-11">
+        <createTable tableName="type_paiements">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="type_paiementsPK"/>
+            </column>
+            <column name="cree_par" type="VARCHAR(50)"/>
+            <column name="date_creation" type="datetime"/>
+            <column name="date_modification" type="datetime"/>
+            <column name="modifie_par" type="VARCHAR(50)"/>
+            <column name="description" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="nom" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="max (generated)" id="1695125941513-12">
+        <addUniqueConstraint columnNames="login" constraintName="UC_UTILISATEURSLOGIN_COL" tableName="Utilisateurs"/>
+    </changeSet>
+    <changeSet author="max (generated)" id="1695125941513-13">
+        <addForeignKeyConstraint baseColumnNames="taxe_id" baseTableName="factures" constraintName="FK34nc0glak4bn9uqaimtigfbun" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="taxes" validate="true"/>
+    </changeSet>
+    <changeSet author="max (generated)" id="1695125941513-14">
+        <addForeignKeyConstraint baseColumnNames="client_id" baseTableName="contrats" constraintName="FK3lc5bhxnumhmod5e3cn9hn6xk" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="Utilisateurs" validate="true"/>
+    </changeSet>
+    <changeSet author="max (generated)" id="1695125941513-15">
+        <addForeignKeyConstraint baseColumnNames="type_depense_id" baseTableName="depenses" constraintName="FK623q778paoyantbv9araqdesa" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="Type_depenses" validate="true"/>
+    </changeSet>
+    <changeSet author="max (generated)" id="1695125941513-16">
+        <addForeignKeyConstraint baseColumnNames="type_paiement" baseTableName="factures" constraintName="FK78v71p7hpktfy0a35ym6r1unl" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="type_paiements" validate="true"/>
+    </changeSet>
+    <changeSet author="max (generated)" id="1695125941513-17">
+        <addForeignKeyConstraint baseColumnNames="taxe_id" baseTableName="articles" constraintName="FK8okdtjdfxgtcolhldyp3g7us9" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="taxes" validate="true"/>
+    </changeSet>
+    <changeSet author="max (generated)" id="1695125941513-18">
+        <addForeignKeyConstraint baseColumnNames="devise_id" baseTableName="depenses" constraintName="FKaejpeweul9v3s9fos2gxakq7o" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="devises" validate="true"/>
+    </changeSet>
+    <changeSet author="max (generated)" id="1695125941513-19">
+        <addForeignKeyConstraint baseColumnNames="facture_id" baseTableName="details_factures" constraintName="FKfxa2ad9kx78lreuk3nylsfmcb" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="factures" validate="true"/>
+    </changeSet>
+    <changeSet author="max (generated)" id="1695125941513-20">
+        <addForeignKeyConstraint baseColumnNames="adresse_id" baseTableName="Utilisateurs" constraintName="FKgs2j1cw70rmimklw0jbpwhd6c" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="adresses" validate="true"/>
+    </changeSet>
+    <changeSet author="max (generated)" id="1695125941513-21">
+        <addForeignKeyConstraint baseColumnNames="type_paiement_id" baseTableName="depenses" constraintName="FKj1f1x9ge41breyx28xl044gb1" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="type_paiements" validate="true"/>
+    </changeSet>
+    <changeSet author="max (generated)" id="1695125941513-22">
+        <addForeignKeyConstraint baseColumnNames="user_id" baseTableName="factures" constraintName="FKqutp46k956qrvtxy4m2wcr6x5" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="Utilisateurs" validate="true"/>
+    </changeSet>
+    <changeSet author="max (generated)" id="1695125941513-23">
+        <addForeignKeyConstraint baseColumnNames="article_id" baseTableName="details_factures" constraintName="FKqy5xg3k38o2nv895fi5yktn1a" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="articles" validate="true"/>
+    </changeSet>
+    <changeSet author="max (generated)" id="1695125941513-24">
+        <addForeignKeyConstraint baseColumnNames="devise_id" baseTableName="factures" constraintName="FKrf1qlj25nykfaneyddyrtrfc8" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="devises" validate="true"/>
+    </changeSet>
+</databaseChangeLog>

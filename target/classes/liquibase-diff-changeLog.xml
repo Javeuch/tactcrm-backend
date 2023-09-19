@@ -1,0 +1,101 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <changeSet author="Anas (generated)" id="1585503406984-5">
+        <addForeignKeyConstraint baseColumnNames="taxe_id" baseTableName="factures" constraintName="FK34nc0glak4bn9uqaimtigfbun" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="taxes" validate="true"/>
+    </changeSet>
+    <changeSet author="Anas (generated)" id="1585503406984-6">
+        <addForeignKeyConstraint baseColumnNames="client_id" baseTableName="contrats" constraintName="FK3lc5bhxnumhmod5e3cn9hn6xk" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="Utilisateurs" validate="true"/>
+    </changeSet>
+    <changeSet author="Anas (generated)" id="1585503406984-7">
+        <addForeignKeyConstraint baseColumnNames="type_depense_id" baseTableName="depenses" constraintName="FK623q778paoyantbv9araqdesa" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="Type_depenses" validate="true"/>
+    </changeSet>
+    <changeSet author="Anas (generated)" id="1585503406984-8">
+        <addForeignKeyConstraint baseColumnNames="type_paiement" baseTableName="factures" constraintName="FK78v71p7hpktfy0a35ym6r1unl" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="type_paiements" validate="true"/>
+    </changeSet>
+    <changeSet author="Anas (generated)" id="1585503406984-9">
+        <addForeignKeyConstraint baseColumnNames="taxe_id" baseTableName="articles" constraintName="FK8okdtjdfxgtcolhldyp3g7us9" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="taxes" validate="true"/>
+    </changeSet>
+    <changeSet author="Anas (generated)" id="1585503406984-10">
+        <addForeignKeyConstraint baseColumnNames="devise_id" baseTableName="depenses" constraintName="FKaejpeweul9v3s9fos2gxakq7o" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="devises" validate="true"/>
+    </changeSet>
+    <changeSet author="Anas (generated)" id="1585503406984-11">
+        <addForeignKeyConstraint baseColumnNames="facture_id" baseTableName="details_factures" constraintName="FKfxa2ad9kx78lreuk3nylsfmcb" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="factures" validate="true"/>
+    </changeSet>
+    <changeSet author="Anas (generated)" id="1585503406984-12">
+        <addForeignKeyConstraint baseColumnNames="adresse_id" baseTableName="Utilisateurs" constraintName="FKgs2j1cw70rmimklw0jbpwhd6c" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="adresses" validate="true"/>
+    </changeSet>
+    <changeSet author="Anas (generated)" id="1585503406984-13">
+        <addForeignKeyConstraint baseColumnNames="type_paiement_id" baseTableName="depenses" constraintName="FKj1f1x9ge41breyx28xl044gb1" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="type_paiements" validate="true"/>
+    </changeSet>
+    <changeSet author="Anas (generated)" id="1585503406984-14">
+        <addForeignKeyConstraint baseColumnNames="user_id" baseTableName="factures" constraintName="FKqutp46k956qrvtxy4m2wcr6x5" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="Utilisateurs" validate="true"/>
+    </changeSet>
+    <changeSet author="Anas (generated)" id="1585503406984-15">
+        <addForeignKeyConstraint baseColumnNames="article_id" baseTableName="details_factures" constraintName="FKqy5xg3k38o2nv895fi5yktn1a" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="articles" validate="true"/>
+    </changeSet>
+    <changeSet author="Anas (generated)" id="1585503406984-16">
+        <addForeignKeyConstraint baseColumnNames="devise_id" baseTableName="factures" constraintName="FKrf1qlj25nykfaneyddyrtrfc8" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="devises" validate="true"/>
+    </changeSet>
+    <changeSet author="Anas (generated)" id="1585503406984-1">
+        <dropNotNullConstraint columnDataType="datetime" columnName="date_depense" tableName="depenses"/>
+    </changeSet>
+    <changeSet author="Anas (generated)" id="1585503406984-2">
+        <dropNotNullConstraint columnDataType="bigint" columnName="devise_id" tableName="depenses"/>
+    </changeSet>
+    <changeSet author="Anas (generated)" id="1585503406984-3">
+        <dropNotNullConstraint columnDataType="varchar(255)" columnName="nom" tableName="depenses"/>
+    </changeSet>
+    <changeSet author="Anas (generated)" id="1585503406984-4">
+        <dropUniqueConstraint constraintName="UC_UTILISATEURSLOGIN_COL" tableName="Utilisateurs"/>
+        <addUniqueConstraint columnNames="login" constraintName="UC_UTILISATEURSLOGIN_COL" tableName="Utilisateurs"/>
+    </changeSet>
+    <changeSet author="Anas (generated)" id="1585503903628-5">
+        <addForeignKeyConstraint baseColumnNames="taxe_id" baseTableName="factures" constraintName="FK34nc0glak4bn9uqaimtigfbun" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="taxes" validate="true"/>
+    </changeSet>
+    <changeSet author="Anas (generated)" id="1585503903628-6">
+        <addForeignKeyConstraint baseColumnNames="client_id" baseTableName="contrats" constraintName="FK3lc5bhxnumhmod5e3cn9hn6xk" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="Utilisateurs" validate="true"/>
+    </changeSet>
+    <changeSet author="Anas (generated)" id="1585503903628-7">
+        <addForeignKeyConstraint baseColumnNames="type_depense_id" baseTableName="depenses" constraintName="FK623q778paoyantbv9araqdesa" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="Type_depenses" validate="true"/>
+    </changeSet>
+    <changeSet author="Anas (generated)" id="1585503903628-8">
+        <addForeignKeyConstraint baseColumnNames="type_paiement" baseTableName="factures" constraintName="FK78v71p7hpktfy0a35ym6r1unl" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="type_paiements" validate="true"/>
+    </changeSet>
+    <changeSet author="Anas (generated)" id="1585503903628-9">
+        <addForeignKeyConstraint baseColumnNames="taxe_id" baseTableName="articles" constraintName="FK8okdtjdfxgtcolhldyp3g7us9" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="taxes" validate="true"/>
+    </changeSet>
+    <changeSet author="Anas (generated)" id="1585503903628-10">
+        <addForeignKeyConstraint baseColumnNames="devise_id" baseTableName="depenses" constraintName="FKaejpeweul9v3s9fos2gxakq7o" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="devises" validate="true"/>
+    </changeSet>
+    <changeSet author="Anas (generated)" id="1585503903628-11">
+        <addForeignKeyConstraint baseColumnNames="facture_id" baseTableName="details_factures" constraintName="FKfxa2ad9kx78lreuk3nylsfmcb" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="factures" validate="true"/>
+    </changeSet>
+    <changeSet author="Anas (generated)" id="1585503903628-12">
+        <addForeignKeyConstraint baseColumnNames="adresse_id" baseTableName="Utilisateurs" constraintName="FKgs2j1cw70rmimklw0jbpwhd6c" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="adresses" validate="true"/>
+    </changeSet>
+    <changeSet author="Anas (generated)" id="1585503903628-13">
+        <addForeignKeyConstraint baseColumnNames="type_paiement_id" baseTableName="depenses" constraintName="FKj1f1x9ge41breyx28xl044gb1" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="type_paiements" validate="true"/>
+    </changeSet>
+    <changeSet author="Anas (generated)" id="1585503903628-14">
+        <addForeignKeyConstraint baseColumnNames="user_id" baseTableName="factures" constraintName="FKqutp46k956qrvtxy4m2wcr6x5" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="Utilisateurs" validate="true"/>
+    </changeSet>
+    <changeSet author="Anas (generated)" id="1585503903628-15">
+        <addForeignKeyConstraint baseColumnNames="article_id" baseTableName="details_factures" constraintName="FKqy5xg3k38o2nv895fi5yktn1a" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="articles" validate="true"/>
+    </changeSet>
+    <changeSet author="Anas (generated)" id="1585503903628-16">
+        <addForeignKeyConstraint baseColumnNames="devise_id" baseTableName="factures" constraintName="FKrf1qlj25nykfaneyddyrtrfc8" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="devises" validate="true"/>
+    </changeSet>
+    <changeSet author="Anas (generated)" id="1585503903628-1">
+        <dropNotNullConstraint columnDataType="datetime" columnName="date_depense" tableName="depenses"/>
+    </changeSet>
+    <changeSet author="Anas (generated)" id="1585503903628-2">
+        <dropNotNullConstraint columnDataType="bigint" columnName="devise_id" tableName="depenses"/>
+    </changeSet>
+    <changeSet author="Anas (generated)" id="1585503903628-3">
+        <dropNotNullConstraint columnDataType="varchar(255)" columnName="nom" tableName="depenses"/>
+    </changeSet>
+    <changeSet author="Anas (generated)" id="1585503903628-4">
+        <dropUniqueConstraint constraintName="UC_UTILISATEURSLOGIN_COL" tableName="Utilisateurs"/>
+        <addUniqueConstraint columnNames="login" constraintName="UC_UTILISATEURSLOGIN_COL" tableName="Utilisateurs"/>
+    </changeSet>
+</databaseChangeLog>

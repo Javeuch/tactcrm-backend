@@ -1,0 +1,64 @@
+2020-11-03 16:47:38,054 INFO  [main] TactCrmApplication: Starting TactCrmApplication on toshiba with PID 12029 (/home/max/workspace-eclipse/fill-rouge-tactcrm-back-end/target/classes started by max in /home/max/workspace-eclipse/fill-rouge-tactcrm-back-end)
+2020-11-03 16:47:38,058 INFO  [main] TactCrmApplication: The following profiles are active: dev
+2020-11-03 16:48:38,933 INFO  [main] Http11NioProtocol: Initializing ProtocolHandler ["http-nio-8080"]
+2020-11-03 16:48:38,935 INFO  [main] StandardService: Starting service [Tomcat]
+2020-11-03 16:48:38,935 INFO  [main] StandardEngine: Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-11-03 16:48:43,022 INFO  [main] [/]: Initializing Spring embedded WebApplicationContext
+2020-11-03 16:48:44,916 INFO  [main] HikariDataSource: HikariPool-1 - Starting...
+2020-11-03 16:48:55,360 INFO  [main] HikariDataSource: HikariPool-1 - Start completed.
+2020-11-03 16:49:57,774 ERROR [main] ChangeSet: Change Set config/liquibase/changelog/20201025071223_changelog.xml::1603609966575-8::max (generated) failed.  Error: Unknown table 'tactcrmdb.databasechangelog' [Failed SQL: DROP TABLE tactcrmdb.databasechangelog]
+2020-11-03 16:50:02,590 WARN  [main] AnnotationConfigServletWebServerApplicationContext: Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Invocation of init method failed; nested exception is liquibase.exception.MigrationFailedException: Migration failed for change set config/liquibase/changelog/20201025071223_changelog.xml::1603609966575-8::max (generated):
+     Reason: liquibase.exception.DatabaseException: Unknown table 'tactcrmdb.databasechangelog' [Failed SQL: DROP TABLE tactcrmdb.databasechangelog]
+2020-11-03 16:50:02,622 INFO  [main] HikariDataSource: HikariPool-1 - Shutdown initiated...
+2020-11-03 16:50:02,946 INFO  [main] HikariDataSource: HikariPool-1 - Shutdown completed.
+2020-11-03 16:50:03,194 INFO  [main] StandardService: Stopping service [Tomcat]
+2020-11-03 16:50:09,040 ERROR [main] SpringApplication: Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Invocation of init method failed; nested exception is liquibase.exception.MigrationFailedException: Migration failed for change set config/liquibase/changelog/20201025071223_changelog.xml::1603609966575-8::max (generated):
+     Reason: liquibase.exception.DatabaseException: Unknown table 'tactcrmdb.databasechangelog' [Failed SQL: DROP TABLE tactcrmdb.databasechangelog]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1796)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:595)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:310)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1108)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:868)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at com.wetic.tactcrm.TactCrmApplication.main(TactCrmApplication.java:34)
+Caused by: liquibase.exception.MigrationFailedException: Migration failed for change set config/liquibase/changelog/20201025071223_changelog.xml::1603609966575-8::max (generated):
+     Reason: liquibase.exception.DatabaseException: Unknown table 'tactcrmdb.databasechangelog' [Failed SQL: DROP TABLE tactcrmdb.databasechangelog]
+	at liquibase.changelog.ChangeSet.execute(ChangeSet.java:637)
+	at liquibase.changelog.visitor.UpdateVisitor.visit(UpdateVisitor.java:53)
+	at liquibase.changelog.ChangeLogIterator.run(ChangeLogIterator.java:83)
+	at liquibase.Liquibase.update(Liquibase.java:202)
+	at liquibase.Liquibase.update(Liquibase.java:179)
+	at liquibase.integration.spring.SpringLiquibase.performUpdate(SpringLiquibase.java:353)
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:305)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1855)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1792)
+	... 16 common frames omitted
+Caused by: liquibase.exception.DatabaseException: Unknown table 'tactcrmdb.databasechangelog' [Failed SQL: DROP TABLE tactcrmdb.databasechangelog]
+	at liquibase.executor.jvm.JdbcExecutor$ExecuteStatementCallback.doInStatement(JdbcExecutor.java:356)
+	at liquibase.executor.jvm.JdbcExecutor.execute(JdbcExecutor.java:57)
+	at liquibase.executor.jvm.JdbcExecutor.execute(JdbcExecutor.java:125)
+	at liquibase.database.AbstractJdbcDatabase.execute(AbstractJdbcDatabase.java:1229)
+	at liquibase.database.AbstractJdbcDatabase.executeStatements(AbstractJdbcDatabase.java:1211)
+	at liquibase.changelog.ChangeSet.execute(ChangeSet.java:600)
+	... 24 common frames omitted
+Caused by: java.sql.SQLSyntaxErrorException: Unknown table 'tactcrmdb.databasechangelog'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:764)
+	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:95)
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java)
+	at liquibase.executor.jvm.JdbcExecutor$ExecuteStatementCallback.doInStatement(JdbcExecutor.java:352)
+	... 29 common frames omitted

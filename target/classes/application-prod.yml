@@ -1,0 +1,31 @@
+name: prod
+environment: production
+logging:
+  level:
+    ROOT: INFO
+    org.springframwork.web: INFO
+    org.hibernate: ERROR
+    org.springframwork.boot.autoconfigure.security: INFO
+spring:
+  profiles:
+    active: prod
+  datasource:
+    url: jdbc:mysql://mysql3000.mochahost.com/mailstyl_tactcrmdb
+    username: mailstyl_admin
+    password: wetic2019
+    driver-calss-name: com.mysql.jdbc.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5Dialect
+  liquibase:
+    enabled: false
+server:
+  port: 80
+  servlet:
+    session:
+      timeout: 6000m
+  compression:
+    enabled: true
+    mime-types: text/html,text/xml,text/plain,text/css, application/javascript, application/json
+    min-response-size: 1024
+
+

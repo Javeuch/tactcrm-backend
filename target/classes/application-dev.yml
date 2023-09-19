@@ -1,0 +1,33 @@
+name: dev
+environment: developpement
+logging:
+  level:
+    ROOT: INFO
+    org.springframwork.web: INFO
+    org.hibernate: INFO
+    org.springframwork.boot.autoconfigure.security: INFO
+spring:
+  profiles:
+    active: dev
+  datasource:
+    url: jdbc:mysql://localhost:3306/tactcrmdb?serverTimezone=Europe/Paris
+    username: root
+    password: euchpassword
+    driver-calss-name: com.mysql.jdbc.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5Dialect
+    hibernate:
+      ddl-auto: update
+  liquibase:
+    enabled: true
+    contexts: dev
+    changeLog: classpath:/config/liquibase/master.xml
+server:
+  port: 8080
+  servlet:
+    session:
+      timeout: 6000m
+
+
+
+
